@@ -1,0 +1,13 @@
+#addForm {
+    position: relative;
+    top: 20px;
+}
+
+.title {
+    background-color: #eee;
+}
+
+.jumbotron {
+    background-image: url("images/clock.jpeg");
+    
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Train Scheduler</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Train Schedule</h1>
+          <p class="lead">Getting you from Point A to Point B in slightly less time than a bus.</p>
+        </div>
+      </div>
+
+    <div class="container" id="schedule">
+    <h4>Current Schedule</h4>
+      <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="title">Train Name</th>
+            <th scope="col" class ="title">Destination</th>
+            <th scope="col" class="title">Frequency (min)</th>
+            <th scope="col" class="title">Next Arrival</th>
+            <th scope="col" class="title">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">The Pineapple Express</th>
+            <td>Honolulu</td>
+            <td>120</td>
+            <td>xxxx</td>
+            <td>xxxx</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+
+    <div class="container" id="addForm">
+    <h4>Add a Train</h4>
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Train Name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Destination</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Destination">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">First Train Time</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="HH:MM - Military Time">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Frequency (min)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Frequency">
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>        
+        </form>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
+</body>
+</html>
