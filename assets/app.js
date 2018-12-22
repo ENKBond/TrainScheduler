@@ -84,7 +84,7 @@ database.ref().on("child_added", function(childSnapshot) {
     var minutesTilTrain = tFrequency = tRemainder;
     console.log(minutesTilTrain);
 
-    var nextTrain = currentTime.add(minutesTilTrain, "minutes").format("HH:mm");
+    var nextTrain = moment().add(minutesTilTrain, "minutes").format("HH:mm");
     console.log(nextTrain);
 
 //display calc'd items and db items to the html  
