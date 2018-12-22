@@ -39,6 +39,7 @@ $("#submitBtn").on("click", function(event) {
         frequency: newFrequency
     };
 
+    //push data to firebase
     database.ref().push(newTrain);
 
     console.log(newTrain.train);
@@ -55,6 +56,7 @@ $("#submitBtn").on("click", function(event) {
 
 });
 
+//when data is updated in firebase:
 database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val().train);
     console.log(childSnapshot.val().destination);
@@ -63,9 +65,33 @@ database.ref().on("child_added", function(childSnapshot) {
 
 
 //calculations for times added here
-//display calc'd items and db items to the html    
 
-})
+    var tFrequency = childSnapshot.val().frequency;
+    var firstTime = childSnapshot.val().timeStart;
+    
+    var firstTimeConverted = moment(firstTime, "HH.mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+
+    var currentTime = moment();
+    console.log(moment(currentTime).format("hh:mm"));
+
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log(diffTime);
+
+    var tRemainder = diffTime % tFrequency;
+    console.log(tRemainder);
+
+    var minutesTilTrain = tFrequency = tRemainder;
+    console.log(minutesTilTrain);
+
+    var nextTrain = currentTime.add(minutesTilTrain, "minutes").format("HH:mm");
+    console.log(nextTrain);
+
+//display calc'd items and db items to the html  
+
+    $(".table").append("<tr>" + "<th scope='row'>" + childSnapshot.val().train + "</th>" + "<td>" + childSnapshot.val().destination + "</td>" + "<td>" + childSnapshot.val().frequency + "</td>" + "<td>" + nextTrain + "</td>" + "<td>" + minutesTilTrain + "</td>" + "</tr>");
+
+});
 
 
 
@@ -73,7 +99,7 @@ database.ref().on("child_added", function(childSnapshot) {
 
 
 
-
+ 
 
 
 
